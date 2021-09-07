@@ -21,3 +21,9 @@
 {% for private_address in unbound_private_address %}
     private-address: {{private_address}}
 {% endfor %}
+
+{% if ansible_os_family == 'Debian' %}
+    tls-cert-bundle: "/etc/ssl/certs/ca-certificates.crt"
+{% else %}
+    tls-cert-bundle: "/etc/ssl/certs/ca-bundle.crt"
+{% endif %}
