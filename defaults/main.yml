@@ -9,7 +9,12 @@ unbound_configuration:
     - num-threads: 1
     - pidfile: "/var/run/unbound.pid"
     - logfile: "{{unbound_logfile}}"
+    - log-time-ascii: "yes"
     - log-queries: "yes"
+    - log-replies: "yes"
+    - log-tag-queryreply: "yes"
+    - log-local-actions: "yes"
+    - log-servfail: "yes"
 
 unbound_zone_name: "default"
 unbound_only_zones: false
